@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Edit <%= filename.replace('.txt', '').replace(/_/g,' ') %></title>
+</head>
+<body>
+    <div class="main w-full min-h-screen bg-zinc-900"> 
+        <div class="form p-10 text-white">
+            <form id="taskForm" action="/edit" method="post">
+                <input type="hidden" name="originalFilename" value="<%= filename %>">
+                <input id="title" class="block w-1/4 rounded-lg outline-none px-5 py-2 bg-zinc-800" type="text" value="<%= filename.replace('.txt', '').replace(/_/g, ' ') %>" name="filename">
+                <textarea id="details" class="w-1/2 rounded-lg outline-none block mt-2 px-5 py-2 resize-none bg-zinc-800" name="newdetails"><%= filedata %></textarea>
+                <div class="mt-5">
+                    <input type="submit" value="Update" class="bg-yellow-600 px-5 py-2 mr-5 rounded-md">
+                    <button type="button" id="deleteButton" class="bg-red-600 px-5 py-2 rounded-md">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('deleteButton').addEventListener('click', function() {
+            if (confirm('Are you sure you want to delete this file?')) {
+                const form = document.getElementById('taskForm');
+                form.action = '/delete';
+                form.method = 'post';
+                form.submit();
+            }
+        });
+    </script>
+</body>
+</html>

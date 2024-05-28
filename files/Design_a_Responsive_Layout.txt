@@ -1,0 +1,1 @@
+ Design a responsive layout for your application using Tailwind CSS. Ensure the application looks good on various screen sizes, including mobile, tablet, and desktop.

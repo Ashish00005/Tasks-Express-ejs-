@@ -1,0 +1,1 @@
+Integrate a third-party API into your application. For example, use a weather API to display the current weather based on the user's location or a payment gateway API to handle payments.

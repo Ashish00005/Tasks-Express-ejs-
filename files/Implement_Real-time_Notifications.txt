@@ -1,0 +1,1 @@
+Add real-time notifications to your application using WebSockets. Notify users when important events occur, such as receiving a new message or a task being completed.
