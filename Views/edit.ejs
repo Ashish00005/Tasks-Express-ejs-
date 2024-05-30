@@ -9,6 +9,7 @@
 <body>
     <div class="main w-full min-h-screen bg-zinc-900"> 
         <div class="form p-10 text-white">
+            <a class="text-blue-500 inline-block mb-10" href="/">Go Back</a>
             <form id="taskForm" action="/edit" method="post">
                 <input type="hidden" name="originalFilename" value="<%= filename %>">
                 <input id="title" class="block w-1/4 rounded-lg outline-none px-5 py-2 bg-zinc-800" type="text" value="<%= filename.replace('.txt', '').replace(/_/g, ' ') %>" name="filename">
